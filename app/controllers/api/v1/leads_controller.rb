@@ -1,5 +1,4 @@
-class Api::V1::LeadsController <ApplicationController
-
+class Api::V1::LeadsController < ApplicationController
   respond_to :json
 
   def index
@@ -24,12 +23,12 @@ class Api::V1::LeadsController <ApplicationController
 
   private
 
-    def lead
-      Lead.find(params[:id])
-    end
+  def lead
+    Lead.find(params[:id])
+  end
 
-    def lead_params
-      params.require(:lead).permit(:first_name, :last_name, :email, :phone, :status, :notes)
-    end
+  def lead_params
+    params.require(:lead).permit(:first_name, :last_name, :email, :phone, :status, :notes)
+  end
 
 end
